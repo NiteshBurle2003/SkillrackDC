@@ -1,0 +1,34 @@
+'''Reverse Alphanumeric Inplace'''
+'''
+You must implement the function reverseAlphanumeric which accepts a string S and reverses only
+the alphanumeric characters (alphabets and digits) inplace.
+Example Input/Output 1:
+Input:
+**hi** !23 skillrack
+Output:
+**kc** !ar lliks32ih
+Explanation:
+Here the alphanumeric characters are h, i, 2, 3, s, k, i, l, l, r, a, c and k. They are reversed among
+them to give k, c, a, r, l, l, i, k, s, 3, 2, i and h.
+The non-alphanumeric characters retain their positions.
+So the modified string value is **kc** !ar lliks32ih
+'''
+
+
+'''Program:'''
+private static void reverseAlphanumeric(char[] str) {
+    String s="";
+    for(int i=str.length-1;i>=0;i--){
+        if((str[i]>='0' && str[i]<='9')||(str[i]>='a' && str[i]<='z')||(str[i]>='A' && str[i]<='Z')){
+            s=s+str[i];
+        }
+    }
+    int c=0;
+    for(int i=0;i<str.length;i++){
+        if((str[i]>='0' && str[i]<='9')||(str[i]>='a' && str[i]<='z')||(str[i]>='A' && str[i]<='Z')){
+            str[i]=s.charAt(c);
+            c++;
+        }
+        //str[i]=str[i]
+    }
+}
