@@ -1,0 +1,105 @@
+'''
+The program must accept two integers (X, Y) and a character CH as the input. The program must
+print the desired pattern as shown in the Example Input/Output section.
+Boundary Condition(s):
+1 <= X, Y <= 1000
+Input Format:
+The first line contains the values of X, CH and Y separated by a space.
+Output Format:
+The list of lines containing the desired pattern as shown in the Example Input/Output section.
+
+Example Input/Output 1:
+Input:
+3 # 5
+Output:
+------#
+-----#
+#---#
+-#-#
+--#
+
+Example Input/Output 2:
+Input:
+7 @ 7
+Output:
+@-----------@
+-@---------@
+--@-------@
+---@-----@
+----@---@
+-----@-@
+------@
+
+Example Input/Output 3:
+Input:
+10 * 4
+Output:
+*
+-*
+--*
+---*
+----*
+-----*
+------*-----*
+-------*---*
+--------*-*
+---------*
+'''
+
+'''Program:'''
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int x=sc.nextInt();
+		char ch=sc.next().charAt(0);
+		int y=sc.nextInt();
+		int max=Math.max(x,y);
+		char[][] arr=new char[max][x+y-1];
+		int i1=max-1;
+		int j1=x-1;
+		int i2=max-1;
+		int j2=x-1;
+		int a=x,b=y;
+		for(int i=0;i<max;i++){
+		    if(a!=0){
+		        arr[i1][j1]=ch;
+		        i1--;
+		        j1--;
+		        a--;
+		    }
+		    if(b!=0){
+		        arr[i2][j2]=ch;
+		        i2--;
+		        j2++;
+		        b--;
+		    }
+		}
+		for(int i=0;i<max;i++){
+		    boolean print=false;
+		    for(int j=x+y-2;j>=0;j--){
+		        if(print){
+		            if(arr[i][j]!=ch){
+		                arr[i][j]='-';
+		            }
+		    }
+		    if(arr[i][j]==ch){
+		        print=true;
+		    }
+		}
+		
+	}
+	for(int i=0;i<max;i++){
+	    for(int j=0;j<x+y-1;j++){
+	        if(arr[i][j]==0){
+	            continue;
+	        }
+	        System.out.print(arr[i][j]);
+	    }
+	    System.out.println();
+	}
+	}
+	    
+}
+
