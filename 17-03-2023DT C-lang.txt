@@ -1,0 +1,48 @@
+'''
+The program must accept a string S and an integer K as the input. The program must print first K
+characters and last K characters as the output.
+Boundary Condition(s):
+1 <= Length of S <= 100
+Input Format:
+The first line contains the string S.
+The second line contains the integer K.
+Output Format:
+The first line contains the first K characters followed by the last k characters.
+
+Example Input/Output 1:
+Input:
+digitizer
+4
+Output:
+digiizer
+Explanation:
+The first 4 characters are digi.
+The last 4 characters are izer.
+Hence the output is digiizer.
+
+Example Input/Output 2:
+Input:
+google
+2
+Output:
+gole
+'''
+
+'''Program:'''
+#include <stdio.h>
+#include <stblib.h>
+#include <string.h>
+
+int main()
+{
+   char ch[101];
+   int n;
+   scanf("%s",ch);
+   scanf("%d",&n);
+   for(int i=0;i<n;i++){
+       printf("%c",ch[i]);
+   }
+   for(int i=strlen(ch)-n;i<strlen(ch);i++){
+       printf("%c",ch[i]);
+   }
+}
